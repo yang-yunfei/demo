@@ -9,267 +9,18 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            background: #33c5c2;
         }
-
-        /* 滚动槽 */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            border-radius: 3px;
-            background: rgba(0, 0, 0, 0.06);
-            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
-        }
-
-        /* 滚动条滑块 */
-        ::-webkit-scrollbar-thumb {
-            border-radius: 3px;
-            background: rgba(0, 0, 0, 0.12);
-            -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
 
         .container {
-            background-color: #ffffff;
-            overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        .container .navbar {
-            width: 100%;
-            height: 20px;
-            background-color: #5b5d65;
-            color: #ffffff;
-        }
-
-        .container .header {
-            margin-top: 20px;
-            padding: 20px;
-        }
-
-        .header .header-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-content .header-content-img {
-            width: 105px;
-            height: 105px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .header-content .header-content-text {
-            margin-left: 15px;
-        }
-
-        .header-content-text .header-content-text-up {
-            color: #2d2f39;
-            font-size: 24px;
-        }
-
-        .header-content-text .header-content-text-down {
-            margin-top: 10px;
-            color: #8a8b91;
-        }
-
-        .header .header-details {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .header-details .header-details-item {
-            width: 160px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header-details-item .header-details-item-up {
-            font-weight: bold;
-        }
-
-        .header-details-item .header-details-item-down {
-            margin-top: 5px;
-            color: #c1c1c1;
-        }
-
-        .header-details .header-details-border {
-            height: 30px;
-            border-left: 2px solid #c1c1c1;
-        }
-
-        .header .header-btn {
-            margin: 10px auto;
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            border-radius: 5px;
-            background-color: #fe2c55;
-            color: #ffffff;
-            cursor: pointer;
-        }
-
-        .header .animate-button {
-            font-size: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* 动画定义 */
-        @keyframes scaleAnimation {
-            0% {
-                transform: scale(0.95);
-            }
-
-            50% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(0.95);
-            }
-        }
-
-        /* 应用动画到按钮 */
-        .animate-button {
-            animation: scaleAnimation 1.2s infinite;
-        }
-
-
-        .container .img-introduction {
-            margin: 20px;
-            padding: 20px 0;
-            border-top: 1px solid #c1c1c1;
-            cursor: pointer;
-        }
-
-        .scroll-container {
             position: relative;
-            width: 100%;
-            overflow-x: scroll;
-            scrollbar-width: none;
-        }
-
-        .scroll-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .scroll-content {
-            display: flex;
-        }
-
-        .scroll-item {
-            position: relative;
-            flex: 0 0 auto;
-            margin-right: 10px;
-            width: 350px;
-            height: 640px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .control-wrap {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background-color: #249492;
             display: flex;
             justify-content: center;
-            align-items: center;
-        }
-
-        .control-wrap .control-btn {
-            width: 14px;
-            height: 14px;
-            transform: scale(0.7);
-            color: #ffffff;
-            box-shadow:
-                -6px -6px 0 -4px,
-                6px 6px 0 -4px,
-                6px -6px 0 -4px,
-                -6px 6px 0 -4px
-        }
-
-        .container .text-introduction {
-            padding: 20px 30px;
-            color: #333333;
             cursor: pointer;
         }
 
-        .text-introduction .text-introduction-content {
-            padding: 20px 0;
-            border-top: 1px solid #c1c1c1;
-            border-bottom: 1px solid #c1c1c1;
-        }
-
-        .text-introduction-content .text-introduction-title {
-            font-weight: bold;
-        }
-
-        .text-introduction-content .text-introduction-detail {
-            margin-top: 20px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            line-height: 28px;
-        }
-
-        .text-introduction-content .text-toggle-button {
-            margin-top: 5px;
-            text-align: right;
-            font-weight: bold;
-            color: #4f9cff;
-        }
-
-        .container .footer {
-            margin-bottom: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-color: #f8f8f8;
-            color: #4f9cff;
-        }
-
-        .footer .icp {
-            color: #c1c1c1;
-        }
-
-        .footer .border {
-            margin: 0 15px;
-            height: 20px;
-            border-left: 2px solid #c1c1c1;
-        }
-
-        .container .modal {
+        ::-webkit-scrollbar {
             display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 50%;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            transform: translateX(-50%);
-            height: 100%;
-            overflow: hidden;
-            background-color: #ffffff;
-        }
-
-        .modal .modal-content {
-            display: block;
-            width: 100%;
         }
 
         #mask {
@@ -280,6 +31,16 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
+        }
+
+        #tips {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 30px;
         }
 
         /* 消息提示 */
@@ -330,54 +91,43 @@
             border-right: 2px solid;
         }
 
-
-        /* 针对手机设备 */
-        @media screen and (max-width: 600px) {
-            body {
-                background-image: url('./09.jpg');
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-            }
-
-            .container {
-                width: 100%
-            }
-
-            .container .modal {
-                width: 100%
-            }
+        .btn {
+            position: absolute;
+            top: 60%;
+            display: none;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: opacity 0.2s ease;
+            cursor: pointer;
+            animation: bounce 2s infinite ease-in-out;
         }
 
-        /* 针对平板设备 */
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            body {
-                background-image: url('./09.jpg');
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                display: flex;
-                justify-content: center;
-            }
-
-            .container {
-                width: 600px
-            }
-
-            .container .modal {
-                width: 600px
-            }
+        .btn:active {
+            opacity: 0.7;
         }
 
-        /* 针对桌面显示器 */
-        @media screen and (min-width: 1025px) {
-            body {
-                background-image: url('./07.jpg'), linear-gradient(-45deg, #2db9b6, #ffffff);
-                background-size: 100% auto;
-                background-repeat: no-repeat;
-                background-position: center;
+        /* 关键帧动画 */
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
             }
 
-            .container {
-                display: none;
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
             }
         }
     </style>
@@ -385,233 +135,83 @@
 
 <body>
     <div class="container">
-        <div class="navbar"></div>
-        <div class="header">
-            <div class="header-content">
-                <div class="header-content-img">
-                    <img src="./08.png" alt="唯树" style="width: 105px;height: 105px;" />
-                </div>
-                <div class="header-content-text">
-                    <div class="header-content-text-up">唯树鲜花</div>
-                    <div class="header-content-text-down">云南花伍科技有限公司</div>
-                </div>
-            </div>
-            <div class="header-details">
-                <div class="header-details-item">
-                    <div class="header-details-item-up">999+</div>
-                    <div class="header-details-item-down">下载次数</div>
-                </div>
-                <div class="header-details-border"></div>
-                <div class="header-details-item">
-                    <div class="header-details-item-up">26M</div>
-                    <div class="header-details-item-down">应用大小</div>
-                </div>
-                <div class="header-details-border"></div>
-                <div class="header-details-item">
-                    <div class="header-details-item-up">3+</div>
-                    <div class="header-details-item-down">适用年龄</div>
-                </div>
-            </div>
-            <div id="custom-btn" class="header-btn animate-button">打开应用</div>
-        </div>
-        <div class="img-introduction">
-            <div id="scroll-container" class="scroll-container">
-                <div class="scroll-content">
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./01.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./01.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./02.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./02.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./03.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./03.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./04.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./04.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./05.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./05.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                    <div class="scroll-item">
-                        <div class="control-wrap" onclick="openPreview('./06.jpg')">
-                            <div class="control-btn"></div>
-                        </div>
-                        <img src="./06.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-introduction">
-            <div class="text-introduction-content">
-                <div class="text-introduction-title">关于唯树鲜花</div>
-                <div class="text-introduction-detail">
-                    唯树鲜花是集家庭鲜花、办公室用花、家居生活鲜花、花艺社区、花材小店于一体的新一代家居鲜花网购平台。
-                    --鲜花品种多到难以想象--
-                    唯树鲜花上拥有近2000多个品种的鲜花，每种鲜花又分ABC级，不常见的小众品种唯树鲜花也都有。覆盖几十个品类：红玫瑰、白玫瑰、粉玫瑰、多头玫瑰、卡布奇诺玫瑰、百合、康乃馨、向日葵、洋桔梗、绣球花、洋甘菊、多头小菊等。让你的家成为新的鲜花森林，每天只需要花点时间在唯树鲜花即可享有美美的花材。
-                    --鲜花爱好者社区--
-                    唯树鲜花拥有一个鲜花发烧友的社区，这里可以学习家庭插花的搭配，也能分享自己插花作品，和全国各地的花友互动，花加社区的模式，让玩花一族找到鲜花大本营。我们以鲜花和时尚家居话题作为鲜花文化的切入点，培育鲜花文化沃土，挖掘年轻人新消费的萌芽兴趣点。
-                    --花农新鲜9小时采摘--
-                    唯树鲜花的鲜花都是花农单天采摘，新鲜有保障，云端花舍花农直发，家庭鲜花直接找花农采购，价格低至9.9元20支。
-                    --开一个线上鲜花小店--
-                    花友可以申请开通属于自己的鲜花店铺，即刻开启家居鲜花生意，覆盖场景是办公室插花、家庭插花、平日用花、订阅鲜花、每周一花等日常鲜花购买，同时也提供情人节，38女神节，七夕节，520，教师节等鲜花产品
-                </div>
-                <div class="text-toggle-button">展开</div>
-            </div>
-        </div>
-        <div class="footer">
-            <div class="icp">滇ICP备20004371号-8A</div>
-            <div class="border"></div>
-            <div>花伍科技</text>
-            </div>
-        </div>
-        <!-- 图片预览 -->
-        <div id="previewModal" class="modal">
-            <img id="fullImage" class="modal-content" onclick="closePreview()" />
-        </div>
+        <img src=".//bg.jpg" alt="唯树" style="width: 100%;height: auto;" />
         <div id="mask"></div>
+        <div id="tips"></div>
+
         <div id="wechat-download" class="wechat-download">
             <div>点击右上角...【 在浏览器中打开 】</div>
             <div class="arrow"></div>
         </div>
+        <a id="windows-download" class="btn"
+            href="https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"></a>
+    </div>
 
-        <script>
-            // 展开收起
-            const btn = document.querySelector('.text-toggle-button');
-            const text = document.querySelector('.text-introduction-detail');
-            btn.addEventListener('click', function () {
-                if (text.style.webkitLineClamp === '4') {
-                    text.style.webkitLineClamp = 'unset'; // 展开文本
-                    btn.textContent = '收起';
-                } else {
-                    text.style.webkitLineClamp = '4'; // 收缩文本
-                    btn.textContent = '展开';
-                }
-            });
-            // 打开预览
-            function openPreview(src) {
-                document.getElementById('fullImage').src = src; // 设置预览图片的路径
-                document.getElementById('previewModal').style.display = "flex"; // 
-                document.getElementById('previewModal').style.flexDirection = "column";
-                document.getElementById('previewModal').style.justifyContent = "center";
+    <script>
+        // 判断设备类型
+        function getPlatform() {
+            return 'windows'
+            const ua = navigator.userAgent.toLowerCase();
+            if (ua.includes('micromessenger')) {
+                return 'wechat';
             }
-            // 关闭预览
-            function closePreview() {
-                document.getElementById('previewModal').style.display = "none"; // 隐藏模态框
+            if (ua.includes('android')) {
+                return 'android';
             }
-            // 获取滚动容器
-            const scrollable = document.getElementById('scroll-container');
-            // 记录初始位置
-            let startX = 0;
-            let startY = 0;
-            let isDragging = false;
-            // 监听触摸事件
-            scrollable.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-                isDragging = true;
-            });
-            scrollable.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                const deltaX = startX - e.touches[0].clientX;
-                const deltaY = startY - e.touches[0].clientY;
-                scrollable.scrollLeft += deltaX;
-                scrollable.scrollTop += deltaY;
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-            });
-            scrollable.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-            // 判断设备类型
-            function getPlatform() {
-                const ua = navigator.userAgent.toLowerCase();
-                if (ua.includes('micromessenger')) {
-                    return 'wechat';
-                }
-                if (ua.includes('android')) {
-                    return 'android';
-                }
-                if (ua.includes('iphone') || ua.includes('ipad')) {
-                    return 'ios';
-                }
-                if (ua.includes('windows')) {
-                    return 'windows';
-                }
-                return 'other';
+            if (ua.includes('iphone') || ua.includes('ipad')) {
+                return 'ios';
             }
-            // open ios
-            function openIOS(universalLink, appStoreURL) {
-                window.location.href = universalLink;
-                setTimeout(function () {
-                    window.location.href = appStoreURL; // 应用未安装，跳转到App Store
-                }, 3000);
+            if (ua.includes('windows')) {
+                return 'windows';
             }
-            // open android
-            function openAndroid(appLink, downloadURL) {
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                document.body.appendChild(iframe);
-                iframe.src = appLink;
-                setTimeout(function () {
-                    window.location.href = downloadURL; // 应用未安装，跳转到下载页面
-                }, 1500);
+            return 'other';
+        }
+        // open ios
+        function openIOS(appStoreURL) {
+            window.location.href = appStoreURL;
+        }
+        // open android
+        function openAndroid(downloadURL) {
+            window.location.href = downloadURL;
+        }
+        // 生命周期钩子
+        document.addEventListener('DOMContentLoaded', function () {
+            // 节点选择器
+            const maskDom = document.getElementById('mask');
+            const tipsDom = document.getElementById('tips');
+            const wechatDownload = document.getElementById('wechat-download');
+            const windowsDownload = document.getElementById('windows-download');
+            // 设备类型
+            const platform = getPlatform();
+            console.log(platform)
+            // 逻辑判断
+            if (platform === 'wechat') {
+                maskDom.style.display = 'block';
+                wechatDownload.style.display = 'flex';
+                return;
             }
-            // 生命周期钩子
-            document.addEventListener('DOMContentLoaded', function () {
-                // 节点选择器
-                const maskDom = document.getElementById('mask');
-                const wechatDownload = document.getElementById('wechat-download');
-                const customBtn = document.getElementById('custom-btn');
-                // 设备类型
-                const platform = getPlatform();
-                alert(platform);
-                // 逻辑判断
-                if (platform === 'wechat') {
-                    maskDom.style.display = 'block';
-                    wechatDownload.style.display = 'flex';
-                    return;
-                }
-                if (platform === 'android') {
-                    customBtn.addEventListener('click', function () {
-                        const androidAppLink = "https://group.app.hua5.com/group"; // Android应用的URL
-                        const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
-                        openAndroid(androidAppLink, androidDownloadURL);
-                    });
-                    return;
-                }
-                if (platform === 'ios') {
-                    customBtn.addEventListener('click', function () {
-                        const iosUniversalLink = "https://group.hua5.com/app"; // iOS应用的universalLink
-                        const iosAppStoreURL = "https://apps.apple.com/cn/app/唯树鲜花/id6450250207"; // iOS应用的App
-                        openIOS(iosUniversalLink, iosAppStoreURL);
-                    });
-                    return;
-                }
-                if (platform === 'windows') {
-                    window.location.href = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk";
-                    return;
-                }
-                if (platform === 'other') {
-                    window.location.href = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk";
-                    return;
-                }
-            });
-        </script>
+            if (platform === 'android') {
+                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
+                openAndroid(androidDownloadURL);
+                return;
+            }
+            if (platform === 'ios') {
+                const iosAppStoreURL = "https://apps.apple.com/cn/app/唯树鲜花/id6450250207"; // iOS应用的App
+                openIOS(iosAppStoreURL);
+                return;
+            }
+            if (platform === 'windows') {
+                windowsDownload.textContent = '下载唯树App';
+                windowsDownload.style.display = 'block';
+                return;
+            }
+            if (platform === 'other') {
+                tipsDom.textContent = '不支持的设备，请使用 Android, iOS 或 Windows 设备访问。';
+                tipsDom.style.display = 'block';
+                maskDom.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>
