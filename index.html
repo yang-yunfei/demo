@@ -563,7 +563,10 @@
             }
             // open android
             function openAndroid(appLink, downloadURL) {
-                window.location.href = appLink;
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+                iframe.src = appLink;
                 setTimeout(function () {
                     window.location.href = downloadURL; // 应用未安装，跳转到下载页面
                 }, 3000);
