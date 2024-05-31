@@ -421,37 +421,37 @@
                         <div class="control-wrap" onclick="openPreview('./01.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./01.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./01.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                     <div class="scroll-item">
                         <div class="control-wrap" onclick="openPreview('./02.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./02.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./02.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                     <div class="scroll-item">
                         <div class="control-wrap" onclick="openPreview('./03.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./03.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./03.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                     <div class="scroll-item">
                         <div class="control-wrap" onclick="openPreview('./04.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./04.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./04.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                     <div class="scroll-item">
                         <div class="control-wrap" onclick="openPreview('./05.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./05.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./05.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                     <div class="scroll-item">
                         <div class="control-wrap" onclick="openPreview('./06.jpg')">
                             <div class="control-btn"></div>
                         </div>
-                        <!-- <img src="./06.jpg" alt="唯树" style="width: 100%;height: 100%;" /> -->
+                        <img src="./06.jpg" alt="唯树" loading="lazy" style="width: 100%;height: 100%;" />
                     </div>
                 </div>
             </div>
@@ -569,10 +569,10 @@
                 iframe.src = appLink;
                 setTimeout(function () {
                     window.location.href = downloadURL; // 应用未安装，跳转到下载页面
-                }, 3000);
+                }, 1500);
             }
             // 生命周期钩子
-            window.onload = function () {
+            document.addEventListener('DOMContentLoaded', function () {
                 // 节点选择器
                 const maskDom = document.getElementById('mask');
                 const wechatDownload = document.getElementById('wechat-download');
@@ -610,7 +610,7 @@
                     window.location.href = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk";
                     return;
                 }
-            };
+            });
         </script>
 </body>
 
