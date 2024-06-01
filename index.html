@@ -15,7 +15,8 @@
         .container {
             position: relative;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             cursor: pointer;
         }
 
@@ -23,28 +24,8 @@
             display: none;
         }
 
-        #mask {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        #tips {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            font-size: 30px;
-        }
-
-        /* 消息提示 */
-        .wechat-download {
+        /* 微信提示 */
+        .wechat {
             position: absolute;
             top: 30px;
             right: 10px;
@@ -91,43 +72,115 @@
             border-right: 2px solid;
         }
 
-        .btn {
-            position: absolute;
-            top: 60%;
+        #mask {
             display: none;
-            padding: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #tips {
+            display: none;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
             text-align: center;
-            color: white;
-            background-color: #007bff;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .animate-button {
+            position: absolute;
+            top: 42%;
+            display: none;
+            width: 40%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
             border-radius: 5px;
-            text-decoration: none;
-            letter-spacing: 2px;
-            transition: opacity 0.2s ease;
+            background-image: linear-gradient(135deg, #92ffc0, #0e5cad);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
             cursor: pointer;
-            animation: bounce 2s infinite ease-in-out;
+            overflow: hidden;
+            outline: none;
+            animation: scaleAnimation 1.2s infinite;
         }
 
-        .btn:active {
-            opacity: 0.7;
+        .animate-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.4),
+                    transparent);
+            animation: shine 4s infinite;
         }
 
-        /* 关键帧动画 */
-        @keyframes bounce {
+        /* 动画定义 */
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(0.9);
+            }
 
-            0%,
-            20%,
-            50%,
-            80%,
+            50% {
+                transform: scale(1);
+            }
+
             100% {
-                transform: translateY(0);
+                transform: scale(0.9);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -150%;
             }
 
-            40% {
-                transform: translateY(-30px);
+            50% {
+                left: 150%;
             }
 
-            60% {
-                transform: translateY(-15px);
+            100% {
+                left: -150%;
+            }
+        }
+
+        /* 针对手机设备 */
+        @media screen and (max-width: 600px) {
+            #tips {
+                font-size: 16px;
+            }
+
+            .animate-button {
+                width: 180px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+            }
+        }
+
+        /* 针对平板设备 */
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            #tips {
+                font-size: 20px;
+            }
+        }
+
+        /* 针对桌面显示器 */
+        @media screen and (min-width: 1025px) {
+            #tips {
+                font-size: 30px;
             }
         }
     </style>
@@ -135,21 +188,21 @@
 
 <body>
     <div class="container">
-        <img src=".//bg.jpg" alt="唯树" style="width: 100%;height: auto;" />
-        <div id="mask"></div>
-        <div id="tips"></div>
-
-        <div id="wechat-download" class="wechat-download">
+        <img src="https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/download_bg.png" alt="唯树" loading="lazy"
+            style="width: 100%;height: auto;" />
+        <div id="wechat" class="wechat">
             <div>点击右上角...【 在浏览器中打开 】</div>
             <div class="arrow"></div>
         </div>
-        <a id="windows-download" class="btn"
-            href="https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"></a>
+        <div id="mask"></div>
+        <div id="tips"></div>
+        <div id="button" class="animate-button">立即下载</div>
     </div>
 
     <script>
         // 判断设备类型
         function getPlatform() {
+            return "other"
             const ua = navigator.userAgent.toLowerCase();
             if (ua.includes('micromessenger')) {
                 return 'wechat';
@@ -178,36 +231,51 @@
             // 节点选择器
             const maskDom = document.getElementById('mask');
             const tipsDom = document.getElementById('tips');
-            const wechatDownload = document.getElementById('wechat-download');
+            const wechatDom = document.getElementById('wechat');
+            const buttonDom = document.getElementById('button');
             const windowsDownload = document.getElementById('windows-download');
             // 设备类型
             const platform = getPlatform();
             console.log(platform)
             // 逻辑判断
             if (platform === 'wechat') {
+                wechatDom.style.display = 'flex';
                 maskDom.style.display = 'block';
-                wechatDownload.style.display = 'flex';
                 return;
             }
             if (platform === 'android') {
                 const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
                 openAndroid(androidDownloadURL);
+                buttonDom.addEventListener('click', function () {
+                    openAndroid(androidDownloadURL);
+                });
+                buttonDom.style.display = 'block';
                 return;
             }
             if (platform === 'ios') {
                 const iosAppStoreURL = "https://apps.apple.com/cn/app/唯树鲜花/id6450250207"; // iOS应用的App
                 openIOS(iosAppStoreURL);
+                buttonDom.addEventListener('click', function () {
+                    openIOS(iosAppStoreURL);
+                });
+                buttonDom.style.display = 'block';
                 return;
             }
             if (platform === 'windows') {
-                windowsDownload.textContent = '下载唯树App';
-                windowsDownload.style.display = 'block';
+                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
+                window.location.href = androidDownloadURL;
+                buttonDom.addEventListener('click', function () {
+                    window.location.href = androidDownloadURL;
+                });
+                buttonDom.style.display = 'block';
                 return;
             }
             if (platform === 'other') {
+                buttonDom.style.display = 'block';
+
                 tipsDom.textContent = '不支持的设备，请使用 Android, iOS 或 Windows 设备访问。';
                 tipsDom.style.display = 'block';
-                maskDom.style.display = 'block';
+                // maskDom.style.display = 'block';
             }
         });
     </script>
