@@ -9,6 +9,8 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100vw;
+            height: 100vh;
             background: #33c3c1;
         }
 
@@ -34,8 +36,8 @@
             display: none;
             justify-content: flex-end;
             align-items: center;
-            color: #fff;
-            font-size: 18px;
+            color: #ffffff;
+            font-size: 16px;
             z-index: 100;
         }
 
@@ -205,6 +207,7 @@
     <script>
         // 判断设备类型
         function getPlatform() {
+            return "wechat"
             const ua = navigator.userAgent.toLowerCase();
             if (ua.includes('micromessenger')) {
                 return 'wechat';
