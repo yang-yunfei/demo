@@ -202,7 +202,6 @@
     <script>
         // 判断设备类型
         function getPlatform() {
-            return "other"
             const ua = navigator.userAgent.toLowerCase();
             if (ua.includes('micromessenger')) {
                 return 'wechat';
@@ -236,7 +235,6 @@
             const windowsDownload = document.getElementById('windows-download');
             // 设备类型
             const platform = getPlatform();
-            console.log(platform)
             // 逻辑判断
             if (platform === 'wechat') {
                 wechatDom.style.display = 'flex';
@@ -275,7 +273,7 @@
 
                 tipsDom.textContent = '不支持的设备，请使用 Android, iOS 或 Windows 设备访问。';
                 tipsDom.style.display = 'block';
-                // maskDom.style.display = 'block';
+                maskDom.style.display = 'block';
             }
         });
     </script>
