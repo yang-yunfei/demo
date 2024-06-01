@@ -117,27 +117,25 @@
             content: '';
             position: absolute;
             top: 0;
-            left: -150%;
-            width: 150%;
+            left: -100%;
+            width: 200%;
             height: 100%;
-            background: linear-gradient(120deg,
+            background-image: linear-gradient(to bottom,
                     transparent,
                     rgba(255, 255, 255, 0.4),
                     transparent);
-            animation: shine 4s infinite;
+            transform-origin: center center;
+            transform: rotate(-60deg);
+            animation: shine 2s ease infinite;
         }
 
         @keyframes shine {
             0% {
-                left: -150%;
-            }
-
-            50% {
-                left: 150%;
+                left: -100%;
             }
 
             100% {
-                left: -150%;
+                left: 100%;
             }
         }
 
@@ -227,7 +225,7 @@
                 return;
             }
             if (platform === 'android') {
-                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
+                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/hua5-group-default.apk"; // Android应用的下载地址
                 openAndroid(androidDownloadURL);
                 buttonDom.style.display = 'block';
                 buttonDom.addEventListener('click', function () {
@@ -245,7 +243,7 @@
                 return;
             }
             if (platform === 'windows') {
-                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/group-default.apk"; // Android应用的下载地址
+                const androidDownloadURL = "https://hua5-group.oss-cn-hangzhou.aliyuncs.com/apk/hua5-group-default.apk"; // Android应用的下载地址
                 window.location.href = androidDownloadURL;
                 buttonDom.style.display = 'block';
                 buttonDom.addEventListener('click', function () {
